@@ -3,31 +3,31 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "test-project": {
+    "test-app": {
       "projectType": "application",
       "schematics": {},
-      "root": "",
-      "sourceRoot": "src",
+      "root": "projects/test-app",
+      "sourceRoot": "projects/test-app/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/test-project",
-            "index": "src/index.html",
-            "browser": "src/main.ts",
+            "outputPath": "dist/test-app",
+            "index": "projects/test-app/src/index.html",
+            "browser": "projects/test-app/src/main.ts",
             "polyfills": [
               "zone.js"
             ],
-            "tsConfig": "tsconfig.app.json",
+            "tsConfig": "projects/test-app/tsconfig.app.json",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "projects/test-app/public"
               }
             ],
             "styles": [
-              "src/styles.css"
+              "projects/test-app/src/styles.css"
             ],
             "scripts": []
           },
@@ -59,10 +59,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "test-project:build:production"
+              "buildTarget": "test-app:build:production"
             },
             "development": {
-              "buildTarget": "test-project:build:development"
+              "buildTarget": "test-app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -77,15 +77,15 @@
               "zone.js",
               "zone.js/testing"
             ],
-            "tsConfig": "tsconfig.spec.json",
+            "tsConfig": "projects/test-app/tsconfig.spec.json",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "projects/test-app/public"
               }
             ],
             "styles": [
-              "src/styles.css"
+              "projects/test-app/src/styles.css"
             ],
             "scripts": []
           }
