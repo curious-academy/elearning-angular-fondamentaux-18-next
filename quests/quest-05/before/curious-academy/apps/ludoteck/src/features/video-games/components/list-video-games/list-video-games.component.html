@@ -1,0 +1,18 @@
+@if(list.length === 0) {
+  <p>Aucun jeu-vidéo présent</p>
+}
+
+@if(list.length > 0) {
+  <table>
+    <tbody>
+      @for (item of list; track item.label) {
+        <tr>
+          <td>{{ item.label }}</td>
+          <td>{{ item.year }}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+}
+
+<button (click)="toRemoveOneElement()">[-1]</button>
