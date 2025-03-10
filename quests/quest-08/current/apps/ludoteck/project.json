@@ -21,7 +21,10 @@
             "input": "apps/ludoteck/public"
           }
         ],
-        "styles": ["apps/ludoteck/src/styles.css"],
+        "styles": [
+          "apps/ludoteck/src/styles.css",
+          "apps/ludoteck/src/styles-bis.css"
+        ],
         "scripts": []
       },
       "configurations": {

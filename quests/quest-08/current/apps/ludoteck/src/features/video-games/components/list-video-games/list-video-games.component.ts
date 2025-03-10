@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { VideoGame, VideoGames } from '../../models/video-game';
 import { TableVideoGamesComponent } from '../table-video-games/table-video-games.component';
 import { AddVideoGameComponent } from '../add-video-game/add-video-game.component';
@@ -8,7 +8,8 @@ import { AddVideoGameComponent } from '../add-video-game/add-video-game.componen
     selector: 'app-list-video-games',
     imports: [TableVideoGamesComponent, AddVideoGameComponent],
     templateUrl: './list-video-games.component.html',
-    styleUrl: './list-video-games.component.css'
+    styleUrl: './list-video-games.component.css',
+    encapsulation: ViewEncapsulation.None
 })
 export class ListVideoGamesComponent {
   list:VideoGames = [
