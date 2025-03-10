@@ -8,12 +8,16 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/ludoteck",
         "index": "apps/ludoteck/src/index.html",
         "browser": "apps/ludoteck/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [
+          "zone.js"
+        ],
         "tsConfig": "apps/ludoteck/tsconfig.app.json",
         "assets": [
           {
@@ -22,6 +26,7 @@
           }
         ],
         "styles": [
+          "@angular/material/prebuilt-themes/cyan-orange.css",
           "apps/ludoteck/src/styles.css",
           "apps/ludoteck/src/styles-bis.css"
         ],
@@ -74,7 +79,9 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
       "options": {
         "jestConfig": "apps/ludoteck/jest.config.ts"
       }
