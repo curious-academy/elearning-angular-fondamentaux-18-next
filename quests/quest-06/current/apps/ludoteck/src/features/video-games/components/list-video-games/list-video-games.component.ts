@@ -2,12 +2,17 @@ import { Component } from '@angular/core';
 import { VideoGame, VideoGames } from '../../models/video-game';
 import { TableVideoGamesComponent } from '../table-video-games/table-video-games.component';
 import { AddVideoGameComponent } from '../add-video-game/add-video-game.component';
+import { FiltersVideoGamesComponent } from '../filters-video-games/filters-video-games.component';
 
 
 @Component({
   selector: 'app-list-video-games',
   standalone: true,
-  imports: [TableVideoGamesComponent, AddVideoGameComponent],
+  imports: [
+    TableVideoGamesComponent,
+    AddVideoGameComponent,
+    FiltersVideoGamesComponent
+  ],
   templateUrl: './list-video-games.component.html',
   styleUrl: './list-video-games.component.css',
   // encapsulation:ViewEncapsulation.Emulated
