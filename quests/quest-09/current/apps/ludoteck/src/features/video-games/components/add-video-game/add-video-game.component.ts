@@ -4,10 +4,11 @@ import { VideoGame } from '../../models/video-game';
 import { JsonPipe } from '@angular/common';
 
 @Component({
-    selector: 'app-add-video-game',
-    imports: [FormsModule, JsonPipe],
-    templateUrl: './add-video-game.component.html',
-    styleUrl: './add-video-game.component.css'
+  selector: 'app-add-video-game',
+  standalone: true,
+  imports: [FormsModule, JsonPipe],
+  templateUrl: './add-video-game.component.html',
+  styleUrl: './add-video-game.component.css'
 })
 export class AddVideoGameComponent {
   videoGame: VideoGame = {

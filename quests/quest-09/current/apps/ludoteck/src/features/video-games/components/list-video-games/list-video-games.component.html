@@ -3,6 +3,8 @@
 }
 
 @if(list.length > 0) {
+  <app-filters-video-games></app-filters-video-games>
+
   <app-table-video-games
       title="Table des jeux-vidéos"
       [items]="list"
@@ -11,12 +13,7 @@
   />
 }
 
-<div class="row">
-  <div class="col">
-    <app-add-video-game></app-add-video-game>
-  </div>
-  <div class="col"></div>
-</div>
+<app-add-video-game></app-add-video-game>
 
 
 

@@ -1,12 +1,12 @@
-import { Component, input, output, ViewEncapsulation } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { VideoGame, VideoGames } from '../../models/video-game';
 
 @Component({
-    selector: 'app-table-video-games',
-    imports: [],
-    templateUrl: './table-video-games.component.html',
-    styleUrl: './table-video-games.component.css',
-    encapsulation: ViewEncapsulation.ShadowDom
+  selector: 'app-table-video-games',
+  standalone: true,
+  imports: [],
+  templateUrl: './table-video-games.component.html',
+  styleUrl: './table-video-games.component.css'
 })
 export class TableVideoGamesComponent {
   items = input.required<VideoGames>();

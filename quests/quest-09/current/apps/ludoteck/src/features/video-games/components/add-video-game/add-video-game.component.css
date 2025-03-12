@@ -2,6 +2,6 @@ input.ng-invalid {
   border: 1px red solid;
 }
 
-input.ng-valid, input {
+input.ng-valid {
   border: 1px darkgreen solid;
 }
