@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { ListVideoGamesComponent } from '../features/video-games/components/list-video-games/list-video-games.component';
-import {MatSliderModule} from '@angular/material/slider';
+import { MatSliderModule } from '@angular/material/slider';
+import { RouterOutlet } from '@angular/router';
 @Component({
-    imports: [ListVideoGamesComponent, MatSliderModule],
+    imports: [RouterOutlet, MatSliderModule],
     selector: 'app-root',
     // template: `
     // <div class="coucou">
