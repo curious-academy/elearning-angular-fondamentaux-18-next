@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { MatSliderModule } from '@angular/material/slider';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
+import { MainMenuComponent } from '../shared/menus/main-menu/main-menu.component';
 @Component({
-    imports: [RouterOutlet, MatSliderModule],
+    imports: [RouterOutlet, RouterLink, MatSliderModule, MainMenuComponent],
     selector: 'app-root',
     // template: `
     // <div class="coucou">
