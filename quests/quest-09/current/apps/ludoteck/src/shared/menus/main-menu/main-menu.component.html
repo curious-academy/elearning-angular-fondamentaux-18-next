@@ -1,26 +1,22 @@
-<ul>
+<!-- <ul>
   <li>
     <a routerLink="/">Accueil</a>
   </li>
   <li>
     <a routerLink="jeux-videos">Mes jeux-vidéos</a>
   </li>
-</ul>
+</ul> -->
 
 <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
   <mat-icon>more_vert</mat-icon>
 </button>
 <mat-menu #menu="matMenu">
-  <button mat-menu-item>
+  <button mat-menu-item (click)="goToUrl('/')">
     <mat-icon>dialpad</mat-icon>
-    <span>Redial</span>
+    <span>Accueil</span>
   </button>
-  <button mat-menu-item disabled>
+  <button mat-menu-item (click)="goToUrl('jeux-videos')">
     <mat-icon>voicemail</mat-icon>
-    <span>Check voice mail</span>
-  </button>
-  <button mat-menu-item>
-    <mat-icon>notifications_off</mat-icon>
-    <span>Disable alerts</span>
+    <span>Mes jeux-vidéos</span>
   </button>
 </mat-menu>
