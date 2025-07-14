@@ -6,7 +6,8 @@ import { EditVideoGameComponent } from "./components/edit-video-game/edit-video-
 export const videoGamesRoutes: Routes = [
   {
     path: '',
-    component: ListVideoGamesComponent
+    component: ListVideoGamesComponent,
+    title: 'Liste des jeux vidéos'
   },
   {
     path: ':id',

@@ -3,6 +3,8 @@ import { NotFoundComponent } from '../shared/errors/not-found/not-found.componen
 import { statisticsRoutes } from '../features/statistics/statistics.routes';
 import { videoGamesRoutes } from '../features/video-games/video-games.routes';
 import { StatisticsResolver } from '../features/statistics/resolvers/statistics.resolver';
+import { requireAuthenticatedGuard } from '../features/authentication/guards/require-authenticated.guard';
+import { authenticationRoutes } from '../features/authentication/authentication.routes';
 
 export const routes: Routes = [
   // {
@@ -13,15 +15,22 @@ export const routes: Routes = [
   // },
   {
     path: 'jeux-videos',
-    children: videoGamesRoutes
+    children: videoGamesRoutes,
+    canActivate: [requireAuthenticatedGuard]
   },
   {
     path: 'stats',
     loadChildren: () => import('../features/statistics/statistics.routes').then(item => item.statisticsRoutes),
+    data: {
+      title: 'Mes stats de jeux',
+      titleColor: '#007bff'
+    },
+    canActivate: [requireAuthenticatedGuard],
     resolve: {
       stats: StatisticsResolver
     }
   },
+  ...authenticationRoutes,
   //...videoGamesRoutes,
   {
     path: '**',
