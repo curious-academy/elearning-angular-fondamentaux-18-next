@@ -1,0 +1,21 @@
+{{ title$ | async }}
+
+@if(list.length === 0) {
+  <p>Aucun jeu-vidéo présent</p>
+}
+
+@if(list.length > 0) {
+  <app-filters-video-games></app-filters-video-games>
+
+  <app-table-video-games
+      title="Table des jeux-vidéos"
+      [items]="list"
+      (askToRemoveOneElement)="toRemoveOneElementParent($event)"
+      (askToRemoveOneSpecific)="toRemoveOneElementParentSpecific($event)"
+  />
+}
+
+<app-add-video-game></app-add-video-game>
+
+
+
