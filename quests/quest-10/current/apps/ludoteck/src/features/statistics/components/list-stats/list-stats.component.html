@@ -1,1 +1,7 @@
-<p>list-stats works!</p>
+@let statistics = stats$ | async;
+
+@for (item of statistics; track item) {
+  <div>
+    {{item.year}} : Succes => {{item.nbSuccess}}
+  </div>
+}
