@@ -2,9 +2,9 @@ import { Routes } from '@angular/router';
 import { NotFoundComponent } from '../shared/errors/not-found/not-found.component';
 import { statisticsRoutes } from '../features/statistics/statistics.routes';
 import { videoGamesRoutes } from '../features/video-games/video-games.routes';
-import { StatisticsResolver } from '../features/statistics/resolvers/statistics.resolver';
 import { requireAuthenticatedGuard } from '../features/authentication/guards/require-authenticated.guard';
 import { authenticationRoutes } from '../features/authentication/authentication.routes';
+import { statsResolver } from '../features/statistics/resolvers/statistics.resolver';
 
 export const routes: Routes = [
   // {
@@ -27,7 +27,7 @@ export const routes: Routes = [
     },
     canActivate: [requireAuthenticatedGuard],
     resolve: {
-      stats: StatisticsResolver
+      stats: statsResolver
     }
   },
   ...authenticationRoutes,
