@@ -1,6 +1,33 @@
 @let params = videoGameParams();
 @let id = videoGameId();
+@let loading = isLoading();
 
 @if(params) {
   <p>Video-game : {{ id }}</p>
 }
+
+@if(! loading) {
+<form [formGroup]="videoGameFormGroup" (ngSubmit)="saveOne()" >
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Titre</mat-label>
+      <input matInput placeholder="Titre" formControlName="label" >
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Année de sortie</mat-label>
+      <input matInput placeholder="Année" formControlName="year" >
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+  </p>
+
+  <button [disabled]="! videoGameFormGroup.valid" type=matButton>Enregistrer</button>
+</form>
+}
+@else {
+  <i>Chargement du formulaire en cours ....</i>
+}
+

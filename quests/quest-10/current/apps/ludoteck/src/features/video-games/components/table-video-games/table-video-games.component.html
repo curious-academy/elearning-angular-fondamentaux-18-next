@@ -6,6 +6,7 @@
         <td>{{ item.label }}</td>
         <td>{{ item.year }}</td>
         <td>
+          <button (click)="editOne(item)">Editer</button>
           <button (click)="clickToRemoveSpecificElement(item)">[-]</button>
         </td>
       </tr>
