@@ -20,6 +20,14 @@ export class AppComponent {
   title = 'ludoteck';
   value = 5
 
+  ngOnInit(): void {
+    setTimeout(() => {
+      console.info('avant', this.title)
+      this.title = 'My ludotek'
+      console.info('apres', this.title)
+    }, 1500);
+  }
+
   myFunction(a: number, b: number): number {
     console.info('Coucou')
 

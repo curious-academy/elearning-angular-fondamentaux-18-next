@@ -16,7 +16,6 @@
         "index": "apps/ludoteck/src/index.html",
         "browser": "apps/ludoteck/src/main.ts",
         "polyfills": [
-          "zone.js"
         ],
         "tsConfig": "apps/ludoteck/tsconfig.app.json",
         "assets": [
