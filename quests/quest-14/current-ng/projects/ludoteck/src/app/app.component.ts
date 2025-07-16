@@ -4,8 +4,9 @@ import { RouterOutlet } from '@angular/router';
 import { MainMenuComponent } from '../shared/menus/main-menu/main-menu.component';
 import { ComputePipe } from '../shared/tools/compute.pipe';
 import { AutoFocusDirective } from '../shared/tools/auto-focus.directive';
+import { ListComponent } from './features/game-sessions/components/list/list.component';
 @Component({
-    imports: [AutoFocusDirective, ComputePipe, RouterOutlet, MatSliderModule, MainMenuComponent],
+    imports: [AutoFocusDirective, ComputePipe, RouterOutlet, MatSliderModule, MainMenuComponent, ListComponent],
     selector: 'app-root',
     // template: `
     // <div class="coucou">
