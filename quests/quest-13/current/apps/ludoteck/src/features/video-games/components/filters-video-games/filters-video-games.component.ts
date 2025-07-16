@@ -1,5 +1,5 @@
 import { AsyncPipe } from '@angular/common';
-import { Component, inject, OnDestroy, OnInit } from '@angular/core';
+import { Component, computed, inject, OnDestroy, OnInit } from '@angular/core';
 import { filter, Observable, Subscription, tap } from 'rxjs';
 import { Person } from '../../models/person';
 import { GetAllPersonApplicatif } from '../../services/get-all-person.applicatif.service';
@@ -20,6 +20,8 @@ export class FiltersVideoGamesComponent implements OnInit, OnDestroy {
     tap(items => console.info(items)) // debug facile de mon next de mon observable
   )
   people$$ = toSignal(this.people$) // on ne le voit pas mais appel via un effect, et donc appel du subscribe dans cet effect
+
+  pegi13People = computed(() => this.people$$()?.filter(item => item.age > 13))
 
   ngOnInit(): void {
     const currentSubscription = this.people$.subscribe({

@@ -17,7 +17,6 @@
             "index": "projects/ludoteck/src/index.html",
             "browser": "projects/ludoteck/src/main.ts",
             "polyfills": [
-              "zone.js"
             ],
             "tsConfig": "projects/ludoteck/tsconfig.app.json",
             "assets": [
@@ -74,8 +73,6 @@
           "builder": "@angular/build:karma",
           "options": {
             "polyfills": [
-              "zone.js",
-              "zone.js/testing"
             ],
             "tsConfig": "projects/ludoteck/tsconfig.spec.json",
             "assets": [

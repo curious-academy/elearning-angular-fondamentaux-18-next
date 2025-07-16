@@ -11,3 +11,12 @@
 }
 </select>
 
+<h2>PEGI 13</h2>
+@for (item of pegi13People(); track item) {
+    <option value="{{ item.id }}">
+        {{ item.surname }}
+    </option>
+}
+@empty {
+  <p>No PEGI 13 found</p>
+}
