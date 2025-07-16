@@ -1,0 +1,17 @@
+<h2>{{ title() }}</h2>
+<table>
+  <tbody>
+    @for (item of items(); track item.label) {
+      <tr>
+        <td>{{ item.label }}</td>
+        <td>{{ item.year }}</td>
+        <td>
+          <button (click)="editOne(item)">Editer</button>
+          <button (click)="clickToRemoveSpecificElement(item)">[-]</button>
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>
+
+<button (click)="clickToRemove()">[-1]</button>

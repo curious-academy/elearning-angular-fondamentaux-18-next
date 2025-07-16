@@ -1,0 +1,40 @@
+@let items = sessionsResource.value();
+
+<div>
+  <h2>Filtres</h2>
+  <div>
+    Ami-e concerné-e ?
+    <select>
+        <option value="">Tous</option>
+        @for (friend of friendsResource.value(); track friend.id) {
+          <option value="{{ friend.id }}">{{ friend.name }}</option>
+        }
+        @empty {
+          @if(friendsResource.isLoading()) {
+            <option>Loading ...</option>
+          }
+        }
+    </select>
+  </div>
+  <div>
+    Jeu-vidéo :
+    <select>
+    @for (videoGame of moviesResource.value(); track videoGame.id) {
+      <option value="{{ videoGame.id }}">{{ videoGame.name }}</option>
+    }
+    </select>
+  </div>
+</div>
+
+@for (item of items; track item) {
+<div class="session">
+  <div class="video-game">{{ item.videoGame.label }}</div>
+</div>
+}
+@empty() {
+@if(sessionsResource.isLoading()) {
+<div class="empty">Chargement en cours</div>
+} @else {
+<div class="empty">Aucun jeu-vidéo disponible</div>
+}
+}
