@@ -1,0 +1,10 @@
+@let statistics = stats$ | async;
+@let titleColor = titleColor$ | async;
+
+<h2 [style.color]="titleColor">{{title$ | async }}</h2>
+
+@for (item of statistics; track item) {
+  <div>
+    {{item.year}} : Succes => {{item.nbSuccess}}
+  </div>
+}
